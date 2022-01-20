@@ -41,7 +41,7 @@ function buyAutoClicker() {
 
 function updateDonutsPerSecond() {
   donutsPerSecond = multipliers + clickers * 5;
-  document.getElementById("donutspersecond").innerHTML = donutsPerSecond;
+  document.getElementById("donutsPerSecond").innerHTML = donutsPerSecond;
 }
 
 setInterval(function () {
@@ -53,6 +53,6 @@ setInterval(function () {
   score = score + multipliers;
   score = score + clickers + 1;
   document.title = score + "Donuts - Donut Clicker";
-  S;
+
   document.getElementById("clickers").innerHTML = score;
 }, 1000);

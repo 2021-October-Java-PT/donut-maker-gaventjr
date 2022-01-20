@@ -15,3 +15,14 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.clickerContainer img {
+  position: relative;
+}
+
+.clickerContainer img:hover {
+  transform: scale(1.25);
+}
+.clickerContainer img:active {
+  transform: scale(0.99);
+}
