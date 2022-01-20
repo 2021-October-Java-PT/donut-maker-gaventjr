@@ -1,0 +1,17 @@
+.Left {
+  float: left;
+  width: 80%;
+}
+
+.Right {
+  float: right;
+  width: 20%;
+}
+
+.donutContainer {
+  background-color: red;
+  width: 50%;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}

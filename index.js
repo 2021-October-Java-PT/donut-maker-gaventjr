@@ -23,6 +23,7 @@ function buyMultiplier() {
     document.getElementById("score").innerHTML = score;
     document.getElementById("donutMultiplier").innerHTML = donutMultiplier;
     document.getElementById("multipliers").innerHTML = multipliers;
+    updateDonutsPerSecond();
   }
 }
 
@@ -34,7 +35,13 @@ function buyAutoClicker() {
     document.getElementById("score").innerHTML = score;
     document.getElementById("autoClicker").innerHTML = autoClicker;
     document.getElementById("clickers").innerHTML = clickers;
+    updateDonutsPerSecond();
   }
+}
+
+function updateDonutsPerSecond() {
+  donutsPerSecond = multipliers + clickers * 5;
+  document.getElementById("donutspersecond").innerHTML = donutsPerSecond;
 }
 
 setInterval(function () {
@@ -45,5 +52,7 @@ setInterval(function () {
 setInterval(function () {
   score = score + multipliers;
   score = score + clickers + 1;
+  document.title = score + "Donuts - Donut Clicker";
+  S;
   document.getElementById("clickers").innerHTML = score;
 }, 1000);

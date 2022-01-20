@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Donut Clicker</title>
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <p>Score: <span id="score">0</span></p>
+    <div class ="Left">
+     <center>
+      <div class="donutContainer">
+    <span id="score">0</span> Donuts<br>
+    <span id="donutsPerSecond">0</span> Donuts per second
+      </div>
+<br>
+<div class="clickerContainer"></div>
     <img
-      scr="images\donut pic.png"
+      src="images\donut pic.png"
       height="256px"
       width="256px"
-      onclick="addToScore(clickingPower)"
-    />
+      onclick="addToScore(clickingPower)">
+    </div>
+    </center>
+    </div>
 
+    <div class = "Right">
     <button onclick="buyMultiplier()">
       Multiplier[<span id="donutMultiplier">10</span>] --<span id="multipliers"
         >0</span
@@ -21,11 +31,12 @@
     </button>
 
     <button onclick="buyAutoClicker()">
-      Multiplier[<span id="autoClicker">100</span>] --<span id="clickers"
+      AutoClicker[<span id="autoClicker">100</span>] --<span id="clickers"
         >0</span
       >
     </button>
 
+    </div>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
