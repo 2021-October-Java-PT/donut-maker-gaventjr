@@ -6,11 +6,24 @@
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <div class="Left">
+    <header>
+      <div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li style="float:right"><a class="active" href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    </header>
+     <div class="Left"> 
       <center>
         <div class="donutContainer">
+          <button class ="scoreboard">
           <span id="score">0</span> Donuts<br />
-          <span id="donutsPerSecond">0</span> Donuts per second
+          <span id="donutsPerSecond">0</span> donuts per second
         </div>
         <br />
         <div class="clickerContainer">
@@ -20,23 +33,29 @@
             width="256px"
             onclick="addToScore(clickingPower)"
           />
+        </button>
         </div>
-      </center>
+      
     </div>
 
-    <div class="Right">
-      <button onclick="buyMultiplier()">
-        Multiplier[<span id="donutMultiplier">10</span>] --<span
+    <div class="Right"> 
+      <button onclick="buyMultiplier()" class ="button2">
+        Multiplier [<span id="donutMultiplier">Purchase for 10 Donuts</span>] # of Multpliers <span
           id="multipliers"
           >0</span
         >
       </button>
 
-      <button onclick="buyAutoClicker()">
-        AutoClicker[<span id="autoClicker">100</span>] --<span id="clickers"
+      <button onclick="buyAutoClicker()" class = "button2">
+        AutoClicker[<span id="autoClicker">100</span>] # of AutoClicks <span id="clickers"
           >0</span
         >
       </button>
+      </div>
+    </center>
+
+
+
     </div>
     <script type="text/javascript" src="index.js"></script>
   </body>

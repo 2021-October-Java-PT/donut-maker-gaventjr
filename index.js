@@ -1,6 +1,6 @@
 let score = 0;
 
-score = score + 1;
+score = score;
 
 let donutMultiplier = 10;
 let multipliers = 0;
@@ -10,18 +10,13 @@ let clickingPower = 1;
 
 //Functions
 
-function addToScore(amount) {
-  score = score + amount;
-  document.getElementById("score").innerHTML = score;
-}
-
 function buyMultiplier() {
   if (score >= donutMultiplier) {
     score = score - donutMultiplier;
     multipliers = multipliers + 1;
 
     document.getElementById("score").innerHTML = score;
-    document.getElementById("donutMultiplier").innerHTML = donutMultiplier;
+    document.getElementById("donutMultiplier").innerHTML = score;
     document.getElementById("multipliers").innerHTML = multipliers;
     updateDonutsPerSecond();
   }
@@ -31,28 +26,51 @@ function buyAutoClicker() {
   if (score >= autoClicker) {
     score = score - autoClicker;
     clickers = clickers + 1;
+    autoClicker = Math.round(autoClicker * 1.15);
 
     document.getElementById("score").innerHTML = score;
-    document.getElementById("autoClicker").innerHTML = autoClicker;
+    document.getElementById("autoClicker").innerHTML = score;
     document.getElementById("clickers").innerHTML = clickers;
     updateDonutsPerSecond();
   }
 }
 
+function addToScore(amount) {
+  score = score + amount;
+  document.getElementById("score").innerHTML = score;
+}
+
 function updateDonutsPerSecond() {
   donutsPerSecond = multipliers + clickers * 5;
   document.getElementById("donutsPerSecond").innerHTML = donutsPerSecond;
+  document.title = score + "donuts + Donut Clicker";
 }
 
 setInterval(function () {
   score = score + multipliers;
-  document.getElementById("multipliers").innerHTML = score;
+  score = score + clickers;
+  document.getElementById("score").innerHTML = score;
+  // document.getElementById("donutMultiplier").innerHTML = score;
+  // document.getElementById("autoClicker").innerHTML = autoClicker;
 }, 1000);
 
-setInterval(function () {
-  score = score + multipliers;
-  score = score + clickers + 1;
-  document.title = score + "Donuts - Donut Clicker";
+function enableAutoClicker() {
+  if (score >= autoClicker) {
+    acBtn.removeAttribute("disabled");
+  } else {
+    acBtn.disabled = true;
+  }
+}
 
-  document.getElementById("clickers").innerHTML = score;
-}, 1000);
+//saving and resetting
+
+function saveGame()
+let gameSave ={
+  score: score,
+  donutMultiplier: donutMultiplier, 
+  multipliers: multipliers,
+  autoClicker: autoClicker,
+  clickers : clickers,
+  clickingPower: clickingPower
+};
+localStorage.setItem("gameSave", JSON.stringify(gameSave)); //Turns game data into a string to be able to save
