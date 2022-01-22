@@ -10,14 +10,15 @@
       <div>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li style="float:right"><a class="active" href="#about">About</a></li>
+          <li><a href="#myModal" data-toggle = "modal" data-target= "#myModal" class="nav-link">Developer Info</a></li>
+          <li><a href="#news">Inspiration</a></li>
+          <li><a href="#contact">Developer Contact </a></li>
         </ul>
       </nav>
     </div>
     </header>
+
+    <h1>Welcome to the Fred Baker Baking Company!!</h1>
      <div class="Left"> 
       <center>
         <div class="donutContainer">
@@ -35,6 +36,22 @@
           />
         </button>
         </div>
+        <!-- Trigger/Open The Modal -->
+<button id="myBtn">Developer Contact</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>George Avent Jr
+      <a href ="https://github.com/gaventjr">Github</a>
+      <a href ="https://www.linkedin.com/in/george-avent-jr-02928062/">Linkedin</a>
+    </p>
+  </div>
+
+</div>
       
     </div>
 
@@ -56,7 +73,9 @@
 
 
 
+
+
     </div>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index-app.js"></script>
   </body>
 </html>
